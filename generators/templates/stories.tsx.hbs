@@ -1,0 +1,24 @@
+import { StoryFn, Meta } from '@storybook/react';
+import {{pascalCase name}}, { {{pascalCase name}}Props } from '.';
+
+export default {
+  title: '{{pascalCase name}}',
+  component: {{pascalCase name}},
+  args: {
+    children: `{{pascalCase name}}`,
+  },
+  argTypes: {
+    children: { type: 'string' },
+  },
+  parameters: {
+    layout: 'fullscreen',
+  },
+} as Meta<{{pascalCase name}}Props>;
+
+export const Default: StoryFn<{{pascalCase name}}Props> = (args) => {
+  return (
+    <div>
+      <{{pascalCase name}} {...args} />
+    </div>
+  );
+};

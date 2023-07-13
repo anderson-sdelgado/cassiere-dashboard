@@ -1,0 +1,14 @@
+import { screen } from '@testing-library/react';
+import { renderTheme } from '../../utils/render-theme';
+import {{pascalCase name}}, { {{pascalCase name}}Props } from '.';
+
+const props: {{pascalCase name}}Props = {
+  children: 'any',
+};
+
+describe('<{{pascalCase name}} />', () => {
+  it('should render', () => {
+    renderTheme(<{{pascalCase name}} {...props} />);
+    expect(screen.getByText('any')).toBeInTheDocument();
+  });
+});

@@ -1,0 +1,15 @@
+import * as Styled from './styles';
+
+export type {{pascalCase name}}TemplateProps = {
+  children?: string;
+};
+
+const {{pascalCase name}} = ({ children }: {{pascalCase name}}TemplateProps) => {
+  return (
+    <Styled.Wrapper>
+      <p>{children}</p>
+    </Styled.Wrapper>
+  );
+};
+
+export default {{pascalCase name}};
