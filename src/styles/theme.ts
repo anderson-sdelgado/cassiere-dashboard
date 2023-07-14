@@ -38,6 +38,7 @@ export const theme = {
     },
   },
   spacings: {
+    xxsmall: '0.4rem',
     xsmall: '0.8rem',
     small: '1.6rem',
     medium: '2.4rem',

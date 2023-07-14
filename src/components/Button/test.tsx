@@ -1,14 +1,14 @@
 import { screen } from '@testing-library/react';
 import { renderTheme } from '../../utils/render-theme';
-import HeaderRelation, { HeaderRelationProps } from '.';
+import Button, { ButtonProps } from '.';
 
-const props: HeaderRelationProps = {
+const props: ButtonProps = {
   children: 'any',
 };
 
-describe('<HeaderRelation />', () => {
+describe('<Button />', () => {
   it('should render', () => {
-    renderTheme(<HeaderRelation {...props} />);
+    renderTheme(<Button {...props} />);
     expect(screen.getByText('any')).toBeInTheDocument();
   });
 });
