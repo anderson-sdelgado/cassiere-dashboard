@@ -6,10 +6,6 @@ export const Wrapper = styled.div`
   `}
 `;
 
-export const Title = styled.h2`
-  /* ${({ theme }) => css``} */
-`;
-
 export const Header = styled.div`
   ${({ theme }) => css`
     display: grid;

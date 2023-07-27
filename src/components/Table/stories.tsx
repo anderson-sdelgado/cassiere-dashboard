@@ -1,5 +1,7 @@
 import { StoryFn, Meta } from '@storybook/react';
-import Table, { TableProps } from '.';
+import Table from '.';
+
+import rowMock from './rowMock';
 
 export default {
   title: 'Table',
@@ -13,12 +15,12 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-} as Meta<TableProps>;
+} as Meta;
 
-export const Default: StoryFn<TableProps> = (args) => {
+export const Default: StoryFn = () => {
   return (
     <div>
-      <Table {...args} />
+      <Table />
     </div>
   );
 };

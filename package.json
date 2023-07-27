@@ -10,6 +10,8 @@
     "generate": "plop --plopfile generators/plopfile.js"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^38.1.1",
+    "@ckeditor/ckeditor5-react": "^6.1.0",
     "@storybook/nextjs": "^7.0.24",
     "@storybook/preset-typescript": "^3.0.0",
     "@styled-icons/material-outlined": "^10.47.0",
@@ -19,7 +21,8 @@
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
     "styled-components": "^5.3.11",
-    "styled-media-query": "^2.1.2"
+    "styled-media-query": "^2.1.2",
+    "video-react": "^0.16.0"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",

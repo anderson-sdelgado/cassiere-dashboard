@@ -1,14 +1,16 @@
 import styled, { css, DefaultTheme } from 'styled-components';
-import { ButtonProps } from '.';
 import media from 'styled-media-query';
+import { ButtonProps } from '.';
 
-export type WrapperProps = { hasIcon: boolean };
+export type WrapperProps = { hasIcon: boolean } & Pick<
+  ButtonProps,
+  'bgcolor' | 'color'
+>;
 
 const wrapperModifiers = {
   withIcon: (theme: DefaultTheme) => css`
     svg {
-      width: 2.4rem;
-
+      width: 2rem;
       & + span {
         margin-left: ${theme.spacings.xxsmall};
       }
@@ -17,14 +19,14 @@ const wrapperModifiers = {
 };
 
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, hasIcon, disabled }) => css`
+  ${({ theme, hasIcon, bgcolor, color }) => css`
     display: inline-flex;
     align-items: center;
     justify-content: center;
     align-content: center;
-    background: green;
-    color: ${theme.colors.white};
-    border: 0;
+    background: ${bgcolor};
+    color: ${color};
+    border: 0.1rem solid #ddd;
     cursor: pointer;
     border-radius: ${theme.border.radius};
     padding: ${theme.spacings.xsmall};

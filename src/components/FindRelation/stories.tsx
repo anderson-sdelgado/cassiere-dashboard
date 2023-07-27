@@ -1,5 +1,5 @@
 import { StoryFn, Meta } from '@storybook/react';
-import FindRelation, { FindRelationProps } from '.';
+import FindRelation from '.';
 
 export default {
   title: 'FindRelation',
@@ -13,9 +13,9 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-} as Meta<FindRelationProps>;
+} as Meta;
 
-export const Default: StoryFn<FindRelationProps> = (args) => {
+export const Default: StoryFn = (args) => {
   return (
     <div>
       <FindRelation {...args} />

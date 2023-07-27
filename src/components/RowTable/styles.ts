@@ -5,11 +5,14 @@ export const RowWrapper = styled.tr`
   /* ${({ theme }) => css``} */
 `;
 
-export const ElementWrapper = styled.th`
+export const ElementWrapper = styled.td`
   /* ${({ theme }) => css``} */
 `;
 
-export const ElementIconWrapper = styled.th`
-  width: 10%;
-  /* ${({ theme }) => css``} */
+export const ElementIconWrapper = styled.td`
+  ${({ theme }) => css`
+    width: 10%;
+    padding: ${theme.spacings.xsmall} 0;
+    text-align: center;
+  `}
 `;
