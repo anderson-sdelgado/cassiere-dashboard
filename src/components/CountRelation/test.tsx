@@ -1,14 +1,10 @@
 import { screen } from '@testing-library/react';
 import { renderTheme } from '../../utils/render-theme';
-import CountRelation, { CountRelationProps } from '.';
-
-const props: CountRelationProps = {
-  children: 'any',
-};
+import CountRelation from '.';
 
 describe('<CountRelation />', () => {
   it('should render', () => {
-    renderTheme(<CountRelation {...props} />);
-    expect(screen.getByText('any')).toBeInTheDocument();
+    renderTheme(<CountRelation />);
+    expect(screen.getByText('1000')).toBeInTheDocument();
   });
 });

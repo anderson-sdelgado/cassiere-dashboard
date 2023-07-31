@@ -1,14 +1,10 @@
 import { screen } from '@testing-library/react';
 import { renderTheme } from '../../utils/render-theme';
-import Relation, { RelationProps } from '.';
-
-const props: RelationProps = {
-  children: 'any',
-};
+import Relation from '.';
 
 describe('<Relation />', () => {
   it('should render', () => {
-    renderTheme(<Relation {...props} />);
-    expect(screen.getByText('any')).toBeInTheDocument();
+    renderTheme(<Relation title="Produto" />);
+    expect(screen.getByText(/produto/i)).toBeInTheDocument();
   });
 });

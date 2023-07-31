@@ -1,17 +1,15 @@
 import * as Styled from './styles';
 
 export type ElementTableProps = {
-  title: string;
   children?: string;
-  img?: string;
-  isID?: boolean;
+  type?: 'id' | 'img' | 'regular';
 };
 
-const ElementTable = ({ title, children, img, isID }: ElementTableProps) => {
+const ElementTable = ({ children, type = 'regular' }: ElementTableProps) => {
   return (
-    <Styled.ElementWrapper isImg={!!img} title={title} isID={isID}>
-      {!!img && <img src={children} />}
-      {!img && children}
+    <Styled.ElementWrapper type={type}>
+      {type === 'img' && <img src={children} />}
+      {type !== 'img' && children}
     </Styled.ElementWrapper>
   );
 };

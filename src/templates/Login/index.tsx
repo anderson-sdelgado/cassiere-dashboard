@@ -2,11 +2,7 @@ import Button from '../../components/Button';
 import TextField from '../../components/TextField';
 import * as Styled from './styles';
 
-export type LoginTemplateProps = {
-  children?: string;
-};
-
-const Login = ({ children }: LoginTemplateProps) => {
+const Login = () => {
   return (
     <Styled.Wrapper>
       <Styled.Box>

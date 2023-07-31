@@ -4,11 +4,7 @@ import Menu from '../../components/Menu';
 import * as Styled from './styles';
 import Maintenance from '../../components/Maintenance';
 
-export type HomeTemplateProps = {
-  children?: string;
-};
-
-const Home = ({ children }: HomeTemplateProps) => {
+const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Styled.Wrapper>

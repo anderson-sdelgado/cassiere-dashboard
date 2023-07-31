@@ -1,14 +1,10 @@
 import { screen } from '@testing-library/react';
 import { renderTheme } from '../../utils/render-theme';
-import AreaField, { AreaFieldProps } from '.';
-
-const props: AreaFieldProps = {
-  children: 'any',
-};
+import AreaField from '.';
 
 describe('<AreaField />', () => {
   it('should render', () => {
-    renderTheme(<AreaField {...props} />);
-    expect(screen.getByText('any')).toBeInTheDocument();
+    renderTheme(<AreaField name="descricao" />);
+    expect(screen.getByText(/descricao/i)).toBeInTheDocument();
   });
 });

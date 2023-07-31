@@ -1,10 +1,7 @@
 import styled, { css } from 'styled-components';
 import { ElementTableProps } from '.';
 
-export type ElementWrapperProps = { isImg: boolean; isID: boolean } & Pick<
-  ElementTableProps,
-  'title'
->;
+export type ElementWrapperProps = { isImg: boolean; isID: boolean };
 
 const wrapperModifiers = {
   id: () => css`
@@ -12,7 +9,7 @@ const wrapperModifiers = {
     text-align: center;
     width: 5%;
   `,
-  image: () => css`
+  img: () => css`
     padding-left: 0;
     text-align: center;
     & img {
@@ -21,10 +18,9 @@ const wrapperModifiers = {
   `,
 };
 
-export const ElementWrapper = styled.td<ElementWrapperProps>`
-  ${({ theme, title, isImg, isID }) => css`
+export const ElementWrapper = styled.td<Pick<ElementTableProps, 'type'>>`
+  ${({ theme, type }) => css`
     padding-left: ${theme.spacings.xsmall};
-    ${isID && wrapperModifiers.id()}
-    ${isImg && wrapperModifiers.image()}
+    ${type !== 'regular' && wrapperModifiers[type]()}
   `}
 `;

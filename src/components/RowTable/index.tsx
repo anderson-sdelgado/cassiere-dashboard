@@ -8,22 +8,36 @@ import Button from '../Button';
 import ElementTable from '../ElementTable';
 
 export type RowTableProps = {
-  keys: string[];
-  values: string[];
+  titles: string[];
+  values: (number | string)[];
 };
 
-const RowTable = ({ keys, values }: RowTableProps) => {
-  const rows = [];
-  for (let i = 0; i < keys.length; i++) {
-    rows.push(
-      <ElementTable key={i} title={keys[i]}>
-        {values[i]}
-      </ElementTable>,
-    );
-  }
+const RowTable = ({ titles, values }: RowTableProps) => {
   return (
     <Styled.RowWrapper>
-      {rows}
+      {values.map((v, index) => {
+        let value = '';
+        if (typeof v === 'number') {
+          value = v.toString();
+        } else {
+          value = v;
+        }
+        if (titles[index] === 'id') {
+          return (
+            <ElementTable type="id" key={index}>
+              {value}
+            </ElementTable>
+          );
+        } else if (titles[index] === 'img') {
+          return (
+            <ElementTable type="img" key={index}>
+              {value}
+            </ElementTable>
+          );
+        } else {
+          return <ElementTable key={index}>{value}</ElementTable>;
+        }
+      })}
       <Styled.ElementIconWrapper>
         <Button icon={<UpIcon />} bgcolor="white" color="black" />
       </Styled.ElementIconWrapper>

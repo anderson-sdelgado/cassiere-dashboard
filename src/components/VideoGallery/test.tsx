@@ -1,14 +1,10 @@
 import { screen } from '@testing-library/react';
 import { renderTheme } from '../../utils/render-theme';
-import VideoGallery, { VideoGalleryProps } from '.';
-
-const props: VideoGalleryProps = {
-  children: 'any',
-};
+import VideoGallery from '.';
 
 describe('<VideoGallery />', () => {
   it('should render', () => {
-    renderTheme(<VideoGallery {...props} />);
-    expect(screen.getByText('any')).toBeInTheDocument();
+    renderTheme(<VideoGallery />);
+    expect(screen.getByText(/images/i)).toBeInTheDocument();
   });
 });

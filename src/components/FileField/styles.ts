@@ -27,7 +27,6 @@ export const Input = styled.input`
 `;
 
 export const Image = styled.img`
-  /* ${({ theme }) => css``} */
   border: 0.1rem solid #eee;
   height: 15rem;
 `;

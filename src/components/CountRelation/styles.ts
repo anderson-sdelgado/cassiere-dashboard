@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.div`
-  /* ${({ theme }) => css``} */
-`;
+export const Wrapper = styled.div``;
 
 export const SelectWrapper = styled.select`
   ${({ theme }) => css`
@@ -10,6 +8,4 @@ export const SelectWrapper = styled.select`
   `}
 `;
 
-export const OptionWrapper = styled.option`
-  /* ${({ theme }) => css``} */
-`;
+export const OptionWrapper = styled.option``;

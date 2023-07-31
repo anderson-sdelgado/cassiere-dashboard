@@ -3,11 +3,7 @@ import * as Styled from './styles';
 import mock from './mock';
 import Image from '../Image';
 
-export type ImageGalleryProps = {
-  children?: string;
-};
-
-const ImageGallery = ({ children }: ImageGalleryProps) => {
+const ImageGallery = () => {
   return (
     <Styled.Wrapper>
       <Styled.WrapperInput>

@@ -6,26 +6,29 @@ import {
 } from '../../utils/formatters';
 
 export type NumberFieldProps = {
+  onInput?: (value: string) => void;
   type?: 'price' | 'percentage' | 'number';
   name: string;
 };
 
-const NumberField = ({ name, type = 'number' }: NumberFieldProps) => {
+const NumberField = ({ name, type = 'number', onInput }: NumberFieldProps) => {
   const [value, setValue] = useState('');
 
-  function handleValue(event) {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.currentTarget.value;
     switch (type) {
       case 'number':
-        setValue(numberFormatter(event.target.value));
+        setValue(numberFormatter(newValue));
         break;
       case 'percentage':
-        setValue(pricePercentageFormatter(event.target.value));
+        setValue(pricePercentageFormatter(newValue));
         break;
       default:
-        setValue('R$ ' + pricePercentageFormatter(event.target.value));
+        setValue('R$ ' + pricePercentageFormatter(newValue));
         break;
     }
-  }
+    !!onInput && onInput(newValue);
+  };
 
   return (
     <Styled.Wrapper>
@@ -37,7 +40,7 @@ const NumberField = ({ name, type = 'number' }: NumberFieldProps) => {
         id={name}
         name={name}
         value={value}
-        onChange={handleValue}
+        onChange={onChange}
       />
     </Styled.Wrapper>
   );

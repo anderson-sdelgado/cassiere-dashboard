@@ -20,9 +20,5 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  ${({ theme }) => css`
-    min-height: 4rem;
-    font-size: ${theme.font.sizes.small};
-    padding: ${theme.spacings.xsmall};
-  `}
+  min-height: 4rem;
 `;

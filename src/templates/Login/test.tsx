@@ -1,14 +1,10 @@
 import { screen } from '@testing-library/react';
 import { renderTheme } from '../../utils/render-theme';
-import Login, { LoginTemplateProps } from '.';
-
-const props: LoginTemplateProps = {
-  children: 'any',
-};
+import Login from '.';
 
 describe('<Login />', () => {
   it('should render', () => {
-    renderTheme(<Login {...props} />);
-    expect(screen.getByText('any')).toBeInTheDocument();
+    renderTheme(<Login />);
+    expect(screen.getByText(/login/i)).toBeInTheDocument();
   });
 });

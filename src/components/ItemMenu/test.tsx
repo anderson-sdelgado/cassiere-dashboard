@@ -11,4 +11,9 @@ describe('<ItemMenu />', () => {
     renderTheme(<ItemMenu {...props} />);
     expect(screen.getByText('any')).toBeInTheDocument();
   });
+
+  it('should render submenu', () => {
+    renderTheme(<ItemMenu {...props} isSubItem={true} />);
+    expect(screen.getByText(/any/i)).toHaveStyle({ paddingLeft: '2.4rem' });
+  });
 });

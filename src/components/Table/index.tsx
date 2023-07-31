@@ -12,7 +12,7 @@ const Table = () => {
         {rowMock.map((row) => (
           <RowTable
             key={row.id}
-            keys={Object.keys(row)}
+            titles={Object.keys(row)}
             values={Object.values(row)}
           />
         ))}

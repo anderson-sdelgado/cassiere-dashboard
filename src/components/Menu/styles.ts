@@ -15,10 +15,6 @@ export const MenuWrapper = styled.nav`
   `}
 `;
 
-export const UnorderedList = styled.ul`
-  /* ${({ theme }) => css``} */
-`;
+export const UnorderedList = styled.ul``;
 
-export const ItemList = styled.li`
-  /* ${({ theme }) => css``} */
-`;
+export const ItemList = styled.li``;

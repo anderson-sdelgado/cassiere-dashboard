@@ -1,5 +1,3 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-export const Wrapper = styled.h2`
-  /* ${({ theme }) => css``} */
-`;
+export const Wrapper = styled.h2``;

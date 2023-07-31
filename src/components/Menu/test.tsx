@@ -1,14 +1,10 @@
 import { screen } from '@testing-library/react';
 import { renderTheme } from '../../utils/render-theme';
-import Menu, { MenuProps } from '.';
-
-const props: MenuProps = {
-  children: 'any',
-};
+import Menu from '.';
 
 describe('<Menu />', () => {
   it('should render', () => {
-    renderTheme(<Menu {...props} />);
-    expect(screen.getByText('any')).toBeInTheDocument();
+    renderTheme(<Menu />);
+    expect(screen.getByText(/dashboard/i)).toBeInTheDocument();
   });
 });

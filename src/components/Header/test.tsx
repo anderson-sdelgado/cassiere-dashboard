@@ -1,14 +1,20 @@
-import { screen } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/react';
 import { renderTheme } from '../../utils/render-theme';
-import Header, { HeaderProps } from '.';
-
-const props: HeaderProps = {
-  children: 'any',
-};
+import Header from '.';
 
 describe('<Header />', () => {
   it('should render', () => {
-    renderTheme(<Header {...props} />);
-    expect(screen.getByText('any')).toBeInTheDocument();
+    const setIsOpen = jest.fn();
+    renderTheme(<Header isOpen={false} setIsOpen={setIsOpen} />);
+    expect(screen.getByText(/cassiere/i)).toBeInTheDocument();
+    fireEvent.click(screen.getByLabelText(/open menu/i));
+    expect(setIsOpen).toHaveBeenCalledTimes(1);
+  });
+
+  it('should render close', () => {
+    const setIsOpen = jest.fn();
+    renderTheme(<Header isOpen={true} setIsOpen={setIsOpen} />);
+    fireEvent.click(screen.getByLabelText(/close/i));
+    expect(setIsOpen).toHaveBeenCalledTimes(1);
   });
 });

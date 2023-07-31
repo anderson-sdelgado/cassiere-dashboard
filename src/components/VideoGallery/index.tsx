@@ -7,7 +7,7 @@ export type VideoGalleryProps = {
   children?: string;
 };
 
-const VideoGallery = ({ children }: VideoGalleryProps) => {
+const VideoGallery = () => {
   return (
     <Styled.Wrapper>
       <Styled.WrapperInput>

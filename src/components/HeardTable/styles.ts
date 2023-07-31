@@ -1,9 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const RowWrapper = styled.tr`
-  ${({ theme }) => css`
-    width: 100%;
-  `}
+  width: 100%;
 `;
 
 export const ElementWrapper = styled.th`

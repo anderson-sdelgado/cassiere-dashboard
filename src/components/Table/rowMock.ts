@@ -1,17 +1,17 @@
 export default [
   {
-    id: '1',
+    id: 1,
     name: 'Kit Berço Fofucho 09 Peças - Coleção Gold',
-    src: 'img/kit.jpg',
+    img: 'img/kit.jpg',
   },
   {
-    id: '2',
-    name: 'Kit Berço Fofucho 09 Peças - Coleção Gold',
-    src: 'img/bala.jpg',
+    id: 2,
+    name: 'Bala',
+    img: 'img/bala.jpg',
   },
   {
-    id: '3',
+    id: 3,
     name: 'Kit Berço Fofucho 09 Peças - Coleção Gold',
-    src: 'img/ninho.jpg',
+    img: 'img/ninho.jpg',
   },
 ];

@@ -1,11 +1,11 @@
 import Button from '../Button';
 import { Add as AddIcon } from '@styled-icons/material-outlined/Add';
 import CountRelation from '../CountRelation';
-import FindRelation from '../FindRelation';
 import * as Styled from './styles';
 import Table from '../Table';
 import PaginateTable from '../PaginateTable';
 import Title from '../Title';
+import TextField from '../TextField';
 
 export type RelationProps = {
   title: string;
@@ -16,7 +16,7 @@ const Relation = ({ title }: RelationProps) => {
     <Styled.Wrapper>
       <Title>{title}</Title>
       <Styled.Header>
-        <FindRelation />
+        <TextField name="Pesquisar" />
         <CountRelation />
         <Button icon={<AddIcon />} bgcolor="green" color="white">
           Inserir
