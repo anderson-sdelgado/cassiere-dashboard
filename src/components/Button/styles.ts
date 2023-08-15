@@ -2,9 +2,9 @@ import styled, { css, DefaultTheme } from 'styled-components';
 import media from 'styled-media-query';
 import { ButtonProps } from '.';
 
-export type WrapperProps = { hasIcon: boolean } & Pick<
+type WrapperProps = { hasIcon: boolean } & Pick<
   ButtonProps,
-  'bgcolor' | 'color'
+  'bgColor' | 'ftColor'
 >;
 
 const wrapperModifiers = {
@@ -19,13 +19,13 @@ const wrapperModifiers = {
 };
 
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, hasIcon, bgcolor, color }) => css`
+  ${({ theme, hasIcon, bgColor, ftColor }) => css`
     display: inline-flex;
     align-items: center;
     justify-content: center;
     align-content: center;
-    background: ${bgcolor};
-    color: ${color};
+    background: ${bgColor};
+    color: ${ftColor};
     border: 0.1rem solid #ddd;
     cursor: pointer;
     border-radius: ${theme.border.radius};

@@ -1,18 +1,52 @@
+import { useState } from 'react';
+import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/router';
 import Button from '../../components/Button';
 import TextField from '../../components/TextField';
 import * as Styled from './styles';
 
 const Login = () => {
+  const [values, setValues] = useState({});
+  const { push } = useRouter();
+
+  const handleInput = (fields: string, value: string) => {
+    setValues((s) => ({ ...s, [fields]: value }));
+  };
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    const result = await signIn('credentials', {
+      ...values,
+      redirect: false,
+      callbackUrl: '/',
+    });
+
+    if (result?.url) {
+      return push(result?.url);
+    }
+
+    // jogar o erro
+    console.error('email ou senha inválida');
+  };
+
   return (
     <Styled.Wrapper>
-      <Styled.Box>
-        <TextField name="Email" display="column" />
-        <TextField name="Password" display="column" />
+      <Styled.Box onSubmit={handleSubmit}>
+        <TextField
+          name="email"
+          display="column"
+          onInputChange={(v) => handleInput('email', v)}
+        />
+        <TextField
+          name="password"
+          display="column"
+          onInputChange={(v) => handleInput('password', v)}
+        />
         <Styled.BoxButton>
-          <Button color="white" bgcolor="green">
+          <Button ftColor="white" bgColor="green">
             Login
           </Button>
-          <Button color="white" bgcolor="red">
+          <Button ftColor="white" bgColor="red">
             Cancel
           </Button>
         </Styled.BoxButton>

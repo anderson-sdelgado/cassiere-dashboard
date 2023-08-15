@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   align-items: center;
 `;
 
-export const Box = styled.div`
+export const Box = styled.form`
   ${({ theme }) => css`
     width: 30rem;
     height: 26rem;

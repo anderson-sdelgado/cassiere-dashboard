@@ -9,9 +9,10 @@ export const Wrapper = styled.div`
 export const Header = styled.div`
   ${({ theme }) => css`
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr 1fr;
     align-items: center;
     text-align: center;
     gap: 3rem;
+    padding: ${theme.spacings.small} 0;
   `}
 `;
