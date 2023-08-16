@@ -5,7 +5,7 @@ import Button from '../../components/Button';
 import TextField from '../../components/TextField';
 import * as Styled from './styles';
 
-const Login = () => {
+const LoginTemplate = () => {
   const [values, setValues] = useState({});
   const { push } = useRouter();
 
@@ -25,7 +25,6 @@ const Login = () => {
       return push(result?.url);
     }
 
-    // jogar o erro
     console.error('email ou senha inválida');
   };
 
@@ -33,11 +32,13 @@ const Login = () => {
     <Styled.Wrapper>
       <Styled.Box onSubmit={handleSubmit}>
         <TextField
+          type="email"
           name="email"
           display="column"
           onInputChange={(v) => handleInput('email', v)}
         />
         <TextField
+          type="password"
           name="password"
           display="column"
           onInputChange={(v) => handleInput('password', v)}
@@ -55,4 +56,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginTemplate;

@@ -1,15 +1,24 @@
 import ItemMenu from '../ItemMenu';
 import * as Styled from './styles';
 
-const Menu = () => {
+export type MenuProps = {
+  menuVisible: boolean;
+};
+
+const Menu = ({ menuVisible }: MenuProps) => {
   return (
-    <Styled.MenuWrapper>
-      <Styled.UnorderedList>
-        <ItemMenu>Dashboard</ItemMenu>
-        <ItemMenu>Cadastros</ItemMenu>
-        <ItemMenu>Relatórios</ItemMenu>
-      </Styled.UnorderedList>
-    </Styled.MenuWrapper>
+    <Styled.Wrapper menuVisible={menuVisible} aria-hidden={!menuVisible}>
+      <Styled.MenuWrapper>
+        <Styled.UnorderedList>
+          <ItemMenu>Dashboard</ItemMenu>
+          <ItemMenu>Cadastros</ItemMenu>
+          <Styled.UnorderedList>
+            <ItemMenu isSubItem>Categoria</ItemMenu>
+          </Styled.UnorderedList>
+          <ItemMenu>Relatórios</ItemMenu>
+        </Styled.UnorderedList>
+      </Styled.MenuWrapper>
+    </Styled.Wrapper>
   );
 };
 

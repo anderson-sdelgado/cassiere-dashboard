@@ -16,7 +16,8 @@ export const wrapperModifiers = {
 };
 
 export const Wrapper = styled.div<Pick<TextFieldProps, 'display'>>`
-  ${({ display }) => css`
+  ${({ theme, display }) => css`
+    margin-top: ${theme.spacings.small};
     ${!!display && wrapperModifiers[display]()}
   `}
 `;

@@ -1,10 +1,10 @@
 import { screen } from '@testing-library/react';
 import { renderTheme } from '../../utils/render-theme';
-import Login from '.';
+import LoginTemplate from '.';
 
 describe('<Login />', () => {
   it('should render', () => {
-    renderTheme(<Login />);
+    renderTheme(<LoginTemplate />);
     expect(screen.getByText(/login/i)).toBeInTheDocument();
   });
 });

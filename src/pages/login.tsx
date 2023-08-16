@@ -1,7 +1,7 @@
-import Login from '../templates/Login';
+import LoginTemplate from '../templates/LoginTemplate';
 
 export default function LoginPage() {
-  return <Login />;
+  return <LoginTemplate />;
 }
 
 export async function getStaticProps() {

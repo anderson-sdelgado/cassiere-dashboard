@@ -18,7 +18,6 @@ const TextField = ({
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = event.currentTarget.value;
     setValue(newValue);
-
     !!onInputChange && onInputChange(newValue);
   };
 

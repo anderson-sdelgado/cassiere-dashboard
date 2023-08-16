@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
-import HomeTemplate, { HomeTemplateProps } from '../templates/HomeTemplate';
-import { initializeApollo } from '../utils/apollo';
+import { initializeApollo } from '../../utils/apollo';
 import { useSession } from 'next-auth/react';
+import RelationTemplate from '../../templates/RelationTemplate';
 
 const ALL_CATEGORIES = gql`
   query getCategories {
@@ -17,7 +17,7 @@ const ALL_CATEGORIES = gql`
   }
 `;
 
-export default function Index(props: HomeTemplateProps) {
+export default function RelationCategory() {
   const { data: session, status } = useSession();
   if (status === 'loading') {
     return <p>Loading...</p>;
@@ -27,7 +27,7 @@ export default function Index(props: HomeTemplateProps) {
     return <p>Access Denied</p>;
   }
 
-  return <HomeTemplate />;
+  return <RelationTemplate />;
 }
 
 export async function getServerSideProps() {
